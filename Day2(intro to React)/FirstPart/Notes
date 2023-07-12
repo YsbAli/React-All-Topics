@@ -1,0 +1,29 @@
+
+
+
+........... reverse the previous class --------------------
+
+npm init
+npm webpack'
+npm i react@17 react-dom@17       ---> installing react and react-dom version 17
+
+
+
+ReactDom is the librery that handles dom related manipulation
+it is just like a mention place .... where to update or what to render is known by ReactDom
+
+
+ReactDom.render  ---> takes two arguments it first one is what to render second one is where to render
+
+
+to convert JSX to js we have BABEL .... so we have to install BABEL
+
+BABEL convert New js to older js
+
+
+
+commant : npm install -D babel-loader @babel/core @babel/preset-env webpack
+
+
+ 
+ npm i  @babel/core @babel/node @babel/preset-env @babel/preset-react babel-loader

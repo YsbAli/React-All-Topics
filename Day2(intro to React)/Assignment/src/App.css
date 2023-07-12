@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+}
+
+.redtext {
+  color: tomato;
+}
+
+.body {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0px;
+  background: rgb(36, 37, 42);
+  padding: 10px;
+}
+
+.logo {
+  color: white;
+  margin-top: 10px;
+}
+.image{
+  width: 50px;
+  margin: 0;
+}
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: white;
+  margin-top: 10px;
+}
+
+.btn {
+  background: rgb(84, 172, 187);
+  color: white;
+  border-radius: 20px;
+  border: 0px;
+  width: 120px;
+  height: 50px;
+  margin-left: 120px;
+  font-size: 1.3rem;
+
+}
+
+.btn:hover {
+  background: rgb(4, 51, 98);
+  cursor: pointer;
+}
+
+.square {
+  list-style: square;
+}
+
+.circle {
+  list-style: circle;
+}
+
+.disc {
+  list-style: disc;
+}
