@@ -1,0 +1,20 @@
+.squrelist{
+    list-style: square;
+}
+
+.circlelist{
+    list-style: circle;
+}
+
+
+.square{
+    list-style: square;
+}
+
+.circle{
+    list-style: circle;
+}
+
+.apple{
+    list-style: disc;
+}

@@ -1,0 +1,34 @@
+
+/* Own Style */
+
+/* These for PrevAssign */
+.squrelist{
+  list-style: square;
+}
+
+.cirlelist{
+  list-style: circle;
+}
+
+
+/*PrevAssign  Ends*/
+
+
+/* Props , state  starts  */
+
+.Nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  margin-left: 300px;
+
+  
+}

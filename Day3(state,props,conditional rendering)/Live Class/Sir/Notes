@@ -1,0 +1,29 @@
+JSX means js file with html,,,,
+
+Heading
+
+- one
+- two
+- three
+
+Heading
+
+- A
+- B
+- C
+
+const Data = [
+{
+heading : "phones"
+items : ["Samsung", "Sony", "Motorola"]
+},
+{
+heading: "Manufactures"
+items:["China", "India", "USA"]
+}
+
+]
+
+data.map(e=> <Heading title={e.heading} items = {e.items}>)
+
+
