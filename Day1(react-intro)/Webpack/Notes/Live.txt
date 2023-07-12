@@ -1,0 +1,30 @@
+in js require in not a valid key word,,, it will throw error
+
+require is node js term.
+
+......video 32:00
+
+npm install webpack
+
+
+in package.json
+
+to this.... "test": "echo \"Error: no test specified\" && exit 1" --->  "build": "webpack"
+
+now run ----> npm run build .....
+but webpack needs to run inside src folder so need to create a src folder
+
+now need to install webpack-cli    -- Command Line Interface
+
+
+now run ---> npm run build
+
+it will create a dist folder , inside dist main.js
+
+
+so dist refers to --> distribution
+
+
+to running in background like nodemon we have 'webpack --watch'  here
+
+
