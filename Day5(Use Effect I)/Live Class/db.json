@@ -1,0 +1,58 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "task": "Read"
+    },
+    {
+      "id": 2,
+      "task": "Write"
+    },
+    {
+      "id": 3,
+      "task": "Speak"
+    },
+    {
+      "id": 4,
+      "task": "Study"
+    },
+    {
+      "id": 5,
+      "task": "JavaScript"
+    },
+    {
+      "id": 6,
+      "task": "React"
+    },
+    {
+      "task": "Learn",
+      "status": false,
+      "id": 7
+    },
+    {
+      "task": "TypeScript",
+      "status": false,
+      "id": 8
+    },
+    {
+      "task": "Hello",
+      "status": false,
+      "id": 9
+    },
+    {
+      "task": "MERN",
+      "status": false,
+      "id": 10
+    },
+    {
+      "task": "",
+      "status": false,
+      "id": 11
+    },
+    {
+      "task": "",
+      "status": false,
+      "id": 12
+    }
+  ]
+}

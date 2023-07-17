@@ -1,0 +1,93 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "task": "Read"
+    },
+    {
+      "id": 2,
+      "task": "Write"
+    },
+    {
+      "id": 3,
+      "task": "Speak"
+    },
+    {
+      "id": 4,
+      "task": "Study"
+    },
+    {
+      "id": 5,
+      "task": "JavaScript"
+    },
+    {
+      "id": 6,
+      "task": "React"
+    },
+    {
+      "task": "Learn",
+      "status": false,
+      "id": 7
+    },
+    {
+      "task": "TypeScript",
+      "status": false,
+      "id": 8
+    },
+    {
+      "task": "Hello",
+      "status": false,
+      "id": 9
+    },
+    {
+      "task": "MERN",
+      "status": false,
+      "id": 10
+    },
+    {
+      "task": "JS",
+      "status": false,
+      "id": 11
+    },
+    {
+      "task": "TS",
+      "status": false,
+      "id": 12
+    },
+    {
+      "task": "Hello",
+      "status": false,
+      "id": 13
+    },
+    {
+      "task": "Hello3",
+      "status": false,
+      "id": 14
+    },
+    {
+      "task": "Hello4",
+      "status": false,
+      "id": 15
+    },
+    {
+      "task": "Tera",
+      "status": false,
+      "id": 16
+    },
+    {
+      "task": "",
+      "status": false,
+      "id": 17
+    },
+    {
+      "task": "Swadesh",
+      "status": false,
+      "id": 18
+    },
+    {
+      "task": "The News",
+      "status": false,
+      "id": 19
+    }
+  ]
+}
