@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
-// import App2 from './Practice/App2.jsx'
+import 'antd/dist/reset.css'
+// import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-    {/* <App2/> */}
   </React.StrictMode>
 );
