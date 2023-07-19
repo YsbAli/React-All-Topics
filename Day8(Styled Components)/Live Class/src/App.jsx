@@ -1,5 +1,6 @@
 import "./App.css";
 import { Button } from "./Components/Button";
+import { Flex } from "./Components/Flex";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
 
         {/* we can pass like this also ... so, */}
         {/* if we write like this <Button></Button>  --> it will automatically take its children */}
-{/* 
+        {/* 
         <Button
           onClick={() => {
             alert("Clicked on Sign In Button");
@@ -20,7 +21,6 @@ const App = () => {
           Sign In
         </Button> */}
 
-        
         <Button
           onClick={() => {
             alert("Clicked on Click Me Button");
@@ -31,6 +31,14 @@ const App = () => {
 
         <Button>Sign In</Button>
         <Button>Register</Button>
+
+        {/* Flex */}
+
+        <Flex>
+          <div>One</div>
+          <div>Two</div>
+          <div>Three</div>
+        </Flex>
       </div>
     </>
   );
