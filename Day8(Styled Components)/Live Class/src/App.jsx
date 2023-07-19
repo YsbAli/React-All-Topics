@@ -1,6 +1,7 @@
 import "./App.css";
 import { Button } from "./Components/Button";
 import { Flex } from "./Components/Flex";
+import { Theme } from "./Components/Theme";
 
 const App = () => {
   return (
@@ -21,24 +22,25 @@ const App = () => {
           Sign In
         </Button> */}
 
-        <Button
+        {/* <Button
           onClick={() => {
             alert("Clicked on Click Me Button");
           }}
         >
           Click Me
-        </Button>
+        </Button> */}
 
-        <Button>Sign In</Button>
-        <Button>Register</Button>
+        {/* <Button>Sign In</Button>
+        <Button>Register</Button> */}
 
-        {/* Flex */}
-
+        {/* Flex Components */}
+        {/* 
         <Flex>
           <div>One</div>
           <div>Two</div>
           <div>Three</div>
-        </Flex>
+        </Flex> */}
+        <Theme />
       </div>
     </>
   );
