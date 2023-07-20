@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AllContext } from "../Context/AllContext";
 import { LanguageContext } from "../Context/LanguageContext";
+import { ThemeContext } from "../Context/ThemeContext";
 
 export const Navbar = () => {
   //   const { CartData } = useContext(AllContext);
@@ -9,6 +10,7 @@ export const Navbar = () => {
 
   const { lang } = useContext(LanguageContext);
   console.log(lang);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <>
@@ -24,9 +26,9 @@ export const Navbar = () => {
         }}
       >
         {/* Cart :{CartData} */}
-        {/* Cart :{cartCount} */}
-        
-        {lang === "en" ? "Cart" : "Byag "} : {cartCount}
+        {/* Cart :{cartCount} */} 
+        {lang === "en" ? "Cart" : "Byag "} : {cartCount}     {theme}
+         
       </nav>
     </>
   );
