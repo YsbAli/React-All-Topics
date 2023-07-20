@@ -11,7 +11,7 @@ export const MyButton = styled.button`
   margin: 5px;
 
   &:hover {
-    background-color: blue;
+    background-color: #b1b1db;
     box-shadow: #000000 0 3px 8px;
   }
 `;

@@ -14,3 +14,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </AllContextProvider>
   </React.StrictMode>
 );
+
+
+
+
+/*
+  <AllContextProvider> 
+  and order does not matter
+  <LanguageContextProvider> 
+
+
+
+*/
