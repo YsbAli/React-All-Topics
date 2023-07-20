@@ -19,7 +19,20 @@ const App = () => {
         </MyButton>
 
         <Navbar />
-        <Cart />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+        </div>
       </div>
     </>
   );
