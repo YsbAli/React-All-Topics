@@ -1,10 +1,13 @@
-import "./App.css";
+// import "./App.css";
+import { Cart } from "./Components/Card";
+import { Navbar } from "./Components/Navbar";
 
 const App = () => {
   return (
     <>
       <div className="App">
-        <h2> This is just like a Sample Project</h2>
+        <Navbar/>
+        <Cart/>
       </div>
     </>
   );
