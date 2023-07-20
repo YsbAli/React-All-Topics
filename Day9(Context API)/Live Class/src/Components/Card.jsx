@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AllContext } from "../Context/AllContext";
+import { MyButton } from "../StyledComponents/Button";
 
 export const Cart = () => {
   const { HandleCartCount } = useContext(AllContext);
@@ -14,13 +15,13 @@ export const Cart = () => {
           margin: "10px",
         }}
       >
-        <button
+        <MyButton
           onClick={() => {
             HandleCartCount(1);
           }}
         >
           Add To Card
-        </button>
+        </MyButton>
       </div>
     </>
   );

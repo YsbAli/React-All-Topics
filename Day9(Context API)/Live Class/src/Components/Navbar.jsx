@@ -21,6 +21,7 @@ export const Navbar = () => {
       >
         {/* Cart :{CartData} */}
         Cart :{cartCount}
+
       </nav>
     </>
   );
