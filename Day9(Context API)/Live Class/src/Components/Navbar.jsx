@@ -26,9 +26,8 @@ export const Navbar = () => {
         }}
       >
         {/* Cart :{CartData} */}
-        {/* Cart :{cartCount} */} 
-        {lang === "en" ? "Cart" : "Byag "} : {cartCount}     {theme}
-         
+        {/* Cart :{cartCount} */}
+        {lang === "en" ? "Cart" : "Byag "} : {cartCount} {theme}
       </nav>
     </>
   );
