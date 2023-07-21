@@ -10,7 +10,7 @@ function LogIn() {
       <button
         onClick={() => {
           //server fetch()...
-          alert("Login Success");
+          alert("Login Success! Re-direct to Home Page");
 
           //   NavigateTo("/products/All Products"); // Navigate to Products with id: All Products
           NavigateTo("/"); //navigate to home page

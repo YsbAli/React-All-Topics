@@ -16,9 +16,9 @@ function Products() {
       <button
         onClick={() => {
           //server Fetch()...
-          alert("You are Registered");
+          alert("Re-direct to Login Page");
 
-          Navigate("/login");                     //onclicking register page user will re-direct to login page
+          Navigate("/login");                  //onclicking register page user will re-direct to login page
         }}
       >
         Register
