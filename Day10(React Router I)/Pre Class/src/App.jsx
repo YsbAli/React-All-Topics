@@ -8,6 +8,7 @@ import Services from "./Components/Services";
 import Products from "./Components/Products";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import LogIn from "./Components/LogIn";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path={"/contact"} element={<ContactUs />}>
             Contact
           </Route>
+          <Route path={'/login'} element={<LogIn/>}>Log in</Route>
         </Routes>
       </div>
     </>

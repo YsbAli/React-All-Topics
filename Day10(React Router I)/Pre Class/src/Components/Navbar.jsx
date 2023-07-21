@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -20,6 +19,7 @@ function Navbar() {
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
       <Link to="/products/:id">Products</Link>
+      <Link to="/login">Login</Link>
     </div>
   );
 }
