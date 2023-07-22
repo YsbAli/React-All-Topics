@@ -1,13 +1,32 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Pages/Navbar";
+import Home from "./Components/Pages/Home";
+import About from "./Components/Pages/About";
+import Service from "./Components/Pages/Service";
+import Projects from "./Components/Pages/Projects";
+import Contact from "./Components/Pages/Contact";
+import Register from "./Components/Pages/Register";
+import Login from "./Components/Register/Login";
+import Logout from "./Components/Register/Logout";
+import { NavBar } from "./CompS/NavBar";
 
-const App = () => {
-  return (
-    <>
-      <div className="App">
-        <h2> This is just like a Sample Project</h2>
-      </div>
-    </>
-  );
-};
+const App = () => (
+  <>
+    <div className="App">
+      {/* <Navbar /> */}
+      <NavBar />
+      <Routes>
+        <Route path={"/"} element={<Home />}></Route>
+        <Route path={"/about"} element={<About />}></Route>
+        <Route path={"/service"} element={<Service />}></Route>
+        <Route path={"/project/:id"} element={<Projects />}></Route>
+        <Route path={"/register"} element={<Register />}></Route>
+        <Route path={"/login"} element={<Login />}></Route>
+        <Route path={"/logout"} element={<Logout />}></Route>
+        <Route path={"/contact"} element={<Contact />}></Route>
+      </Routes>
+    </div>
+  </>
+);
 
 export default App;
