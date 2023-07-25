@@ -9,6 +9,7 @@ import Register from "./Components/Pages/Register";
 import Login from "./Components/Register/Login";
 import Logout from "./Components/Register/Logout";
 import { NavBar } from "./CompS/NavBar";
+import UsersList from "./Components/API/UsersList";
 
 const App = () => (
   <>
@@ -20,6 +21,8 @@ const App = () => (
         <Route path={"/about"} element={<About />}></Route>
         <Route path={"/service"} element={<Service />}></Route>
         <Route path={"/project/:id"} element={<Projects />}></Route>
+        {/* <Route path={"/users"} element={<Users />}></Route> */}
+        <Route path={"/users"} element={<UsersList/>}></Route>
         <Route path={"/register"} element={<Register />}></Route>
         <Route path={"/login"} element={<Login />}></Route>
         <Route path={"/logout"} element={<Logout />}></Route>

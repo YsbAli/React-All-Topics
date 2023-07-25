@@ -5,6 +5,7 @@ export const NavBar = () => {
     { title: "Home", to: "/" },
     { title: "About ", to: "/about" },
     { title: "Service", to: "/service" },
+    { title: "Users", to: "/users" },
   ];
 
   return (
@@ -25,6 +26,7 @@ export const NavBar = () => {
           <Link
             style={{
               margin: "10px",
+              textDecoration: "none",
             }}
             key={i}
             to={e.to}
