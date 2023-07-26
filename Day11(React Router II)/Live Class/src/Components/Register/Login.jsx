@@ -10,7 +10,6 @@ function Login() {
         onClick={() => {
           //server fetch()...
           alert("Your are Login! Re-directed to Product page");
-
           Navigate("/project/:id");
         }}
       >
