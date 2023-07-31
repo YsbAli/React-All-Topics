@@ -10,6 +10,3 @@ export const PrivateComponent = ({ children }) => {
   }
   return children;
 };
-
-
-

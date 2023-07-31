@@ -24,17 +24,14 @@
 
 // Protected Login page:  show below login page is want to show userDetails
 
-
 import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const {HandleAuth} = useContext(AuthContext)
+  const { HandleAuth } = useContext(AuthContext);
+  const Navigate = useNavigate();
+
   const Stylelogin = {
     margin: "40px",
     padding: "40px",
@@ -48,14 +45,19 @@ const Login = () => {
         <input type="password" placeholder="Enter Password" />
         <input type="submit" />
       </div>
-      {/* <div>
-        <button onClick={()=>{
-          alert('Clicked')
-          HandleAuth(true)
-        }}>
+      <div>
+        <button
+          onClick={() => {
+            HandleAuth(true);
+            // alert('Clicked')
+            // Navigate("/users/:id");
+            Navigate("/");
+            // Navigate("/about");
+          }}
+        >
           Login
         </button>
-      </div> */}
+      </div>
     </>
   );
 };
