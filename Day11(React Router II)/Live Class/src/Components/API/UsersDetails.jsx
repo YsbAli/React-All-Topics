@@ -1,15 +1,22 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../../Context/AuthContext";
-import { Navigate } from "react-router-dom";
+
+
+// import { AuthContext } from "../../Context/AuthContext";
+// import { Navigate } from "react-router-dom";
 
 const UsersDetails = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState({});
-  const { isAuth } = useContext(AuthContext);
+  // const { isAuth } = useContext(AuthContext);
 
   // console.log("UserDetails", userData);
+
+
+
+
+
 
   //calling api for perticular data on id
   useEffect(() => {
@@ -19,9 +26,17 @@ const UsersDetails = () => {
     });
   }, []);
 
-  if (!isAuth) {
-    return <Navigate to={"/login"} />; //declarad that i have to login to show the below details
-  }
+
+
+
+
+
+  //is login false then show this.......it is in the protectedComponent
+  // if (!isAuth) {
+  //   return <Navigate to={"/login"} />; //declarad that i have to login to show the below details
+  // }
+
+
 
 
   const Container = {
@@ -29,8 +44,6 @@ const UsersDetails = () => {
     marginTop: "30px",
   };
 
-
-  
   return (
     <>
       <div style={Container}>
