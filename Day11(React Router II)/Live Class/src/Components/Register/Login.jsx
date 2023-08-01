@@ -43,15 +43,18 @@ const Login = () => {
         <input type="text" placeholder="Enter Name" />
         <input type="email" placeholder="Enter Email" />
         <input type="password" placeholder="Enter Password" />
-        <input type="submit" />
+        <input type="Submit" />
       </div>
       <div>
         <button
           onClick={() => {
+            //make network request POST req.in/api/login with email and password
+            //token
+            //change  state of IsAuth to true
             HandleAuth(true);
             // alert('Clicked')
             // Navigate("/users/:id");
-            Navigate("/");
+            Navigate("/", { replace: true });          // this replace is for after log in 
             // Navigate("/about");
           }}
         >
