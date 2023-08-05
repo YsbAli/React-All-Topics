@@ -61,7 +61,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 // Custom  query hook for pagination,,,
 
@@ -72,9 +72,13 @@ const useGetQuery = (query) => {
 
 const UsersList = () => {
   const [userData, setUserData] = useState([]);
-  const Location = useLocation;
-    console.log("Location", Location)
-  console.log(useGetQuery("page"));
+  // const Location = useLocation;
+  //   console.log("Location", Location)
+  // console.log(useGetQuery("page"));
+
+  const [params] = useSearchParams();
+
+  console.log(params.get("page"));
 
   //Api Call
 
