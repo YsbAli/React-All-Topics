@@ -61,10 +61,21 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// Custom  query hook for pagination,,,
+
+const useGetQuery = (query) => {
+  const param = new URLSearchParams(window.location.search);
+  return param.get(query);
+};
 
 const UsersList = () => {
   const [userData, setUserData] = useState([]);
+  const Location = useLocation;
+    console.log("Location", Location)
+  console.log(useGetQuery("page"));
+
   //Api Call
 
   useEffect(() => {
@@ -77,7 +88,7 @@ const UsersList = () => {
   // Styling
 
   const UserDiv = {
-    marginTop:'10px',
+    marginTop: "10px",
     fontFamily: "sans-serif",
     textAlign: "center",
   };
@@ -98,7 +109,7 @@ const UsersList = () => {
             <Link style={Name} to={`/users/${apidata.id}`}>
               {/* <img src={apidata.avatar} alt="" /> */}
               <h3>
-              {apidata.id}. {apidata.first_name} {apidata.last_name}
+                {apidata.id}. {apidata.first_name} {apidata.last_name}
               </h3>
             </Link>
           </div>
@@ -110,14 +121,4 @@ const UsersList = () => {
 
 export default UsersList;
 
-
-
-
-
-
 // Now todays task is : I don't want to show user details if user is not logged in....
-
-
-
-
- 
