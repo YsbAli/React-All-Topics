@@ -30,7 +30,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { HandleAuth } = useContext(AuthContext);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const Stylelogin = {
     margin: "40px",
@@ -51,11 +51,12 @@ const Login = () => {
             //make network request POST req.in/api/login with email and password
             //token
             //change  state of IsAuth to true
-            HandleAuth(true);
+            HandleAuth(true);                                                  // onClick event a amra kono component returns korte parina... that's why we use here useNavigate hook that returns a navigate function
             // alert('Clicked')
             // Navigate("/users/:id");
-            Navigate("/", { replace: true });          // this replace is for after log in 
+            // Navigate("/", { replace: true });                              // this replace is for after log in
             // Navigate("/about");
+            navigate(-2, { replace: true });                                 // (-1) -->first entry onto the stack,,, (-2) -> means navigate to second one from the current entry to the stack....
           }}
         >
           Login

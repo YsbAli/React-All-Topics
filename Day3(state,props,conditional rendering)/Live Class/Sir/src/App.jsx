@@ -1,6 +1,7 @@
 import "./App.css";
 import { Category } from "./Components/Category/Category";
 import React from "react";
+import { useState } from "react";
 
 function App() {
   const Navbar = [
@@ -22,7 +23,8 @@ function App() {
   ];
 
   // For State part....we can take any name here in the counter or setCounter part ,,,,we can take any name in the setState or in the state
-  const [Counter, setCounter] = React.useState(0);
+  // const [Counter, setCounter] = React.useState(0);
+  const [Counter, setCounter] = useState(0);
 
   // we are creating a function which will be in reuse ...we will reuse this function
   const HandleAdd = (value) => {
@@ -39,11 +41,12 @@ function App() {
   }
 
   return (
+    
     <>
       <div className="Nav">
-        {/* {Navbar.map((el) => (
+        {Navbar.map((el) => (
         <Category image={el.image} label={el.title} />
-      ))} */}
+      ))}
 
         {/* in the above all data is coming from the Navbar variable ,,,, */}
         {/* Now we will see how the data can be pass throw the components and reuse the component */}

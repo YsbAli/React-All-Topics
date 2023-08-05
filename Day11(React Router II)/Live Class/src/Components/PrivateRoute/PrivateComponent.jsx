@@ -6,7 +6,8 @@ export const PrivateComponent = ({ children }) => {
   const { isAuth } = useContext(AuthContext);
 
   if (!isAuth) {
-    return <Navigate to="/login" replace={true} />;            // this replace is refore login
+    return <Navigate to="/login" replace={false} />;      // this replace is before login,,, login korar agey, back korley previous page a chole asbe...
   }
+  // true means user can go to previous page and false means user can't go to previous page
   return children;
 };
