@@ -3,7 +3,8 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Hello This is Redux-intro Pre Class</h1>
+    <h1>Redux Pre Class</h1>
+    <p>The Pre class in only based on thery...</p>
     </>
   );
 }
