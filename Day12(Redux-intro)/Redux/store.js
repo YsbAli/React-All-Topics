@@ -132,12 +132,9 @@ console.log("After Dispatch" , store.getState())         // After Dispatch { cou
 // Now Adding new state and updating it with new action 
 
 
-
-
-
+/*
 
 import { legacy_createStore as createStore } from "redux";
-
 
 
 const initState = {
@@ -149,14 +146,11 @@ const Reducer = (store, action) => {
     if (action.type === "ADD-COUNT") {
         return { ...store, counter: store.counter + action.payload }
     }
-
     // todos Logic,,,
     if (action.type === "ADD_TODOS") {
         return { ...store, todos: [...store.todos, action.payload] }
     }
-
     return store;
-
 
 }
 
@@ -179,10 +173,55 @@ Store.dispatch({ type: "ADD-COUNT", payload: 1 })
 
 Store.dispatch({ type: "ADD_TODOS", payload: { title: "Reading", status: true } })
 
-// one More Todos ... 
+// one More Todos ...   
 
 Store.dispatch({ type: 'ADD_TODOS', payload: { title: "Writing", state: false } })
 
-
+// Writing dispatch everytime because in one click only one dispatch can be call
 
 console.log("After Dispatch", Store.getState())              // After Dispatch { counter: 0, todos: [ { title: 'Reading', status: true } ] }
+
+
+*/
+
+
+
+
+// Now modify Reducer logic with switch case and rewrite the whole code...
+
+
+
+import { legacy_createStore as CreateStore } from "redux";
+
+const initial_State = {
+    counter: 0,
+    todos: [],
+    theme: 'light'
+}
+
+const Reducer = (store, action) => {
+    switch (action.type) {
+        case "ADD_COUNT": return { ...store, counter: store.counter + action.payload }
+        case "ADD_TODOS": return { ...store, todos: [...store.todos, action.payload] }
+        // case "TOGGLE_THEME": return { ...store, theme: store.theme === 'light' ? 'dark' : 'light' }
+        default: return store;
+    }
+}
+
+const Store = CreateStore(Reducer, initial_State)
+
+
+console.log("Initial State", Store.getState())
+
+
+Store.dispatch({ type: "ADD_COUNT", payload: 1 })
+Store.dispatch({ type: "ADD_TODOS", payload: { Title: 'Learn Front-End', status: true } })
+Store.dispatch({ type: "ADD_TODOS", payload: { Title: 'Learn Back-end', status: true } })
+Store.dispatch({ type: "ADD_TODOS", payload: { Title: 'Learn Full-Stack', status: true } })
+// Store.dispatch({type:"TOGGLE_THEME", payload : 1})
+
+
+// Store.dispatch({ type: "ADD_COUNT", payload: 10 })    //counter : 11
+
+
+console.log("After Dispatch", Store.getState())
