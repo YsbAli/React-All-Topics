@@ -281,7 +281,7 @@ console.log(Store.getState())
 // Now creating action function and pass it to  ---->  Store.dispatch()
 
 
-
+/*
 
 
 import { legacy_createStore as CreateStore } from 'redux'
@@ -347,4 +347,27 @@ console.log(Store.getState())
 
 
 
+*/
 
+
+//Now creating multiple file for multiple pourpose,,, like reducer.js or store.js etc,..
+
+// store.js 
+
+import { legacy_createStore as CreateStore } from "redux";
+
+initialState = {
+    counter: 0,
+    todos : [],
+    theme : 'light'
+}
+
+
+const Store = CreateStore(initialState)
+
+Store.dispatch(AddTodos("Learn Redux"))
+Store.dispatch(AddTodos("Learn Node JS"))
+
+Store.dispatch(Counter(1))
+
+console.log(Store.getState())
