@@ -232,10 +232,16 @@ console.log("After Dispatch", Store.getState())
 
 
 
+
+
+
+
 // Now create the actions with variable name ,,,so that if any spelling mistake happen it can throw an error not show the result
 // so the code is : ---
 
 
+
+/*
 import { legacy_createStore as CreateStore } from 'redux'
 
 const initialState = {
@@ -264,5 +270,81 @@ Store.dispatch({ type: ADD_COUNTER, payload: 1 })
 Store.dispatch({ type: ADD_TODOS, payload: { title: "Going to Interview", status: true } })
 Store.dispatch({ type: ADD_TODOS, payload: { title: "Going to placed with high package", status: true } })
 console.log(Store.getState())
+
+
+*/
+
+
+
+
+
+// Now creating action function and pass it to  ---->  Store.dispatch()
+
+
+
+
+
+import { legacy_createStore as CreateStore } from 'redux'
+
+const initialState = {
+    counter: 0,
+    todos: [],
+}
+
+// chenging action name into variable
+const ADD_COUNTER = "ADD_COUNTER";
+const ADD_TODOS = "ADD_TODOS";
+const TOGGLE_THEME = "TOGGLE_THEME"
+
+
+//action Creators:
+
+//for todos
+const AddTodos = (title) => {
+    return {
+        type: ADD_TODOS,
+        payload: {
+            title: title,
+            status: true
+        }
+    }
+}
+
+
+// for counter 
+const Counter = (value) => {
+    return {
+        type: ADD_COUNTER,
+        payload: value
+    }
+
+}
+
+const Reducer = (store, action) => {
+    switch (action.type) {
+        case ADD_COUNTER: return { ...store, counter: store.counter + action.payload }
+        case ADD_TODOS: return { ...store, todos: [...store.todos, action.payload] }
+        default: return store
+    }
+}
+
+const Store = CreateStore(Reducer, initialState)
+
+
+// Store.dispatch({ type: ADD_COUNTER, payload: 1 })
+// Store.dispatch({ type: ADD_TODOS, payload: { title: "Going to Interview", status: true } })
+// Store.dispatch({ type: ADD_TODOS, payload: { title: "Going to placed with high package", status: true } })
+
+// passing the actions creator function 
+
+
+Store.dispatch(AddTodos("Learn Redux"))
+Store.dispatch(AddTodos("Learn Node JS"))
+
+Store.dispatch(Counter(1))
+
+console.log(Store.getState())
+
+
 
 
