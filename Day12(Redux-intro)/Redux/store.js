@@ -86,11 +86,13 @@ console.log(store.getState())              // getState will always give the curr
 // soo the fresh code is      ------
 
 
+/*
+
 import { legacy_createStore as createStore } from 'redux';
 
 
 const Reducer = (store, action) => {
-    if (action.type === "ADD_THEME") {
+    if (action.type === "ADD_COUNT") {
         return { ...store, counter: store.counter + action.payload }
     }
 
@@ -109,9 +111,78 @@ const store = createStore(Reducer, initState)
 console.log(store)           // output will be those four function
 
 
-console.log(store.getState())                        // { counter: 0, theme: 'dark', todos: [], price: 0 }
+console.log("initial Store", store.getState())                        // { counter: 0, theme: 'dark', todos: [], price: 0 }
+
+
+
+//dispatch
+
+// dispatch takes an action 
+
+store.dispatch({type: "ADD_COUNT", payload: 2})
+
+console.log("initial Store", store.getState())            //initial Store { counter: 0, theme: 'dark', todos: [], price: 0 }
+console.log("After Dispatch" , store.getState())         // After Dispatch { counter: 2, theme: 'dark', todos: [], price: 0 }
+
+
+*/
+
+
+
+// Now Adding new state and updating it with new action 
 
 
 
 
 
+
+import { legacy_createStore as createStore } from "redux";
+
+
+
+const initState = {
+    counter: 0,
+    todos: []
+}
+
+const Reducer = (store, action) => {
+    if (action.type === "ADD-COUNT") {
+        return { ...store, counter: store.counter + action.payload }
+    }
+
+    // todos Logic,,,
+    if (action.type === "ADD_TODOS") {
+        return { ...store, todos: [...store.todos, action.payload] }
+    }
+
+    return store;
+
+
+}
+
+
+const Store = createStore(Reducer, initState)
+
+console.log("initial State", Store.getState())          // initial State { counter: 0, todos: [] }
+
+
+
+// dispatch for counter 
+
+
+Store.dispatch({ type: "ADD-COUNT", payload: 1 })
+
+
+
+
+// dispatch for todos,,,
+
+Store.dispatch({ type: "ADD_TODOS", payload: { title: "Reading", status: true } })
+
+// one More Todos ... 
+
+Store.dispatch({ type: 'ADD_TODOS', payload: { title: "Writing", state: false } })
+
+
+
+console.log("After Dispatch", Store.getState())              // After Dispatch { counter: 0, todos: [ { title: 'Reading', status: true } ] }
