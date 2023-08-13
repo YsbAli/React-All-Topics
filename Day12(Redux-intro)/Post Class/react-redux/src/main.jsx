@@ -1,13 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import {Store } from '../src/Redux/Store.js'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { Store } from "../src/Redux/Store.js";
+import { AppContextProvider } from "./Redux/AppContextProvider.jsx";
 
-console.log(Store.getState())
+// console.log(Store.getState())
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <AppContextProvider store={Store}>
+      <App />
+    </AppContextProvider>
+  </React.StrictMode>
+);
