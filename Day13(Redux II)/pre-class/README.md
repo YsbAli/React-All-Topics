@@ -14,4 +14,5 @@ Currently, two official plugins are available:
 # install react-redux libreries  
   npm i react-redux
   
-
+# install uuid 
+  npm i uuid

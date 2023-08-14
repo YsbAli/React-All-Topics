@@ -1,3 +1,5 @@
+import { ADD_TODO } from "./ActionType"
+
 const initialState = {
     todos: [
         {
@@ -11,6 +13,8 @@ const initialState = {
 
 export const Reducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case ADD_TODO:
+            return { ...state, todos: [...state.todos, payload] }
         default:
             return state
     }
