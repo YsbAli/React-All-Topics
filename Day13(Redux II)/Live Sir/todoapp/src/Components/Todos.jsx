@@ -16,6 +16,20 @@ function Todos() {
     );
   };
 
+
+  const HandleDelete  = ()=>{
+    dispatch(DeleteTodo({
+        type:
+        status:
+
+    }))
+  }
+
+
+
+
+
+
   return (
     <div>
       <input
@@ -24,6 +38,7 @@ function Todos() {
         placeholder="Add Todo..."
       />
       <button onClick={HandleAdd}>ADD</button>
+      <button onClick={HandleDelete}>Delete</button>
       {todos.map((todo) => (
         <div key={todo.title}>{todo.title}</div>
       ))}

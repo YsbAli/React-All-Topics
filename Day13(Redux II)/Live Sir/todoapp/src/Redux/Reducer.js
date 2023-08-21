@@ -1,12 +1,14 @@
-import { ADD_TODO } from "./Action";
+import { ADD_TODO, DELETE_TODO } from "./Action";
 
 
 export const TodoReducer = ((store, { type, payload }) => {
     switch (type) {
         case ADD_TODO:
             return { ...store, todos: [...store.todos, payload] }
+        case DELETE_TODO:
+            return { ...store, todos: [...store.todos, payload] }
         default:
-            return store    
+            return store
     }
 })
 
