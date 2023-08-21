@@ -17,6 +17,10 @@ function Counter() {
   const HandleAdd = () => {
     // Store.dispatch(AddCount(1));
     dispatch(AddCount(1));
+    // console.log("UpdatedCounter", UpdatedCounter);
+    // UpdatedCounter === 5
+    //   ? dispatch(AddCount(1))
+    //   : "Counter value can't be more than 5";
   };
 
   return (
