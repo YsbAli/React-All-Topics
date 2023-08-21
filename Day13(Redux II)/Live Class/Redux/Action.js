@@ -1,14 +1,14 @@
 
 // chenging action name into variable
-const ADD_COUNTER = "ADD_COUNTER";
-const ADD_TODOS = "ADD_TODOS";
-const TOGGLE_THEME = "TOGGLE_THEME"
+export const ADD_COUNTER = "ADD_COUNTER";
+export const ADD_TODOS = "ADD_TODOS";
+export const TOGGLE_THEME = "TOGGLE_THEME"
 
 
 //action Creators:
 
 //for todos
-const AddTodos = (title) => {
+export const AddTodos = (title) => {
     return {
         type: ADD_TODOS,
         payload: {
@@ -20,10 +20,9 @@ const AddTodos = (title) => {
 
 
 // for counter 
-const Counter = (value) => {
+export const Counter = (value) => {
     return {
         type: ADD_COUNTER,
         payload: value
     }
-
 }

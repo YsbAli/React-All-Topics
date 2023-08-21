@@ -356,7 +356,7 @@ console.log(Store.getState())
 
 import { legacy_createStore as CreateStore } from "redux";
 
-initialState = {
+const initialState = {
     counter: 0,
     todos : [],
     theme : 'light'
