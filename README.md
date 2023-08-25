@@ -25,3 +25,9 @@
 # Day11 - React Router II
 
 # Day12 - Redux-intro
+
+# Day13 - Redux II
+
+# Day14 - Redux III (Combine Reducer)
+
+# Day15 - Redux Thunk

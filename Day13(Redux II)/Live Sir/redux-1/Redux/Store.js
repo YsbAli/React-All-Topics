@@ -9,7 +9,8 @@ export const Store = CreateStore(CounterReducer, { counter: 0 })
 
 
 //subscribe function will notification on chenging store value,, whenever store value change this function will get call
-Store.subscribe(() => {
-    console.log(Store.getState());
-});
+
+// Store.subscribe(() => {
+//     console.log(Store.getState());
+// });
 
