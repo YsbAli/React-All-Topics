@@ -29,13 +29,28 @@ export const Todo = () => {
 
   //for network request or storing data/todo in db.json
 
+  // const HandleTodo = () => {
+  //   const payload = {
+  //     type: text,
+  //     status: false,
+  //   };
+
+  //   //network post request
+
+  //   fetch("http://localhost:8000/todos", {
+  //     body: JSON.stringify(payload),
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     method: "POST",
+  //   }).then(getData); // .then(getData) ---> this is for data adding in UI,,,after saving the data,,,calling the data again
+  // };
+
   const HandleTodo = () => {
     const payload = {
       type: text,
       status: false,
     };
-
-    //network post request
 
     fetch("http://localhost:8000/todos", {
       body: JSON.stringify(payload),
@@ -43,7 +58,9 @@ export const Todo = () => {
         "content-type": "application/json",
       },
       method: "POST",
-    }).then(getData); // .then(getData) ---> this is for data adding in UI,,,after saving the data,,,calling the data again
+    })
+      .then(() => setText(""))
+      .then(getData); //first .then is for ---> after adding the data setinput box empty
   };
 
   //calling useEffect for fetching the data
@@ -66,6 +83,7 @@ export const Todo = () => {
   return (
     <div>
       <input
+        value={text}
         onChange={(e) => setText(e.target.value)}
         type="text"
         placeholder="Add Todo..."

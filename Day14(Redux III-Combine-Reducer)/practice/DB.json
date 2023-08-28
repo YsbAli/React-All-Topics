@@ -1,19 +1,39 @@
 {
   "todos": [
     {
-      "type": "Learn Redux",
+      "type": "Learn MongoDB",
       "status": false,
       "id": 1
     },
     {
-      "type": "Learn Node JS",
+      "type": "Learn Express JS",
       "status": false,
       "id": 2
     },
     {
-      "type": "Learn API Building",
+      "type": "Learn React",
       "status": false,
       "id": 3
+    },
+    {
+      "type": "Learn Node",
+      "status": false,
+      "id": 4
+    },
+    {
+      "type": "Have a Relax",
+      "status": false,
+      "id": 5
+    },
+    {
+      "type": "Have tea",
+      "status": false,
+      "id": 6
+    },
+    {
+      "type": "Have Rice Please",
+      "status": false,
+      "id": 7
     }
   ]
 }
