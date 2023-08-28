@@ -1,3 +1,14 @@
 {
-    "todos" : []
+  "todos": [
+    {
+      "title": "Learn Node",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "Have Tea",
+      "status": false,
+      "id": 2
+    }
+  ]
 }

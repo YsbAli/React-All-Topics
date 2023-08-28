@@ -1,26 +1,49 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddTodo } from "../Redux/Action";
+// import { AddTodo } from "../Redux/Todo/Action";
 import { useState } from "react";
 
 export const Todo = () => {
   // const todos = useSelector((state) => state.todo);
-  const todos = useSelector(
-    (state) => state.todo
-    // (prev, current)=>{
-    //    //
-    // }
-  );
-  const dispatch = useDispatch();
+  // const todos = useSelector(
+  //   (state) => state.todo
+  //   // (prev, current)=>{
+  //   //    //
+  //   // }
+  // );
+
+  //after combiner reducer,,,,
+  const todos = useSelector((state) => state.todos.todos);
+
+  // const dispatch = useDispatch();
   const [text, setText] = useState("");
   // console.log(todos);
 
+  // const HandleTodo = () => {
+  //   dispatch(
+  //     AddTodo({
+  //       type: text,
+  //       status: false,
+  //     })
+  //   );
+  // };
+
+  //for network request or storing data/todo in db.json
+
   const HandleTodo = () => {
-    dispatch(
-      AddTodo({
-        type: text,
-        status: false,
-      })
-    );
+    const payload = {
+      title: text,
+      status: false,
+    };
+
+    //network post request
+
+    fetch("http://localhost:8000/todos", {
+      body: JSON.stringify(payload),
+      headers: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+    });
   };
 
   console.log("Rendering Todo Components");
