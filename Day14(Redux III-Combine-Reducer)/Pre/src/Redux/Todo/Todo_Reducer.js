@@ -1,7 +1,7 @@
-import { ADD_TODO } from "./Action";
+import { ADD_TODO } from "./Todo_Action";
 
 
-export const Reducer = (store, { type, payload }) => {
+export const Todo_Reducer = (store = { todo: [] }, { type, payload }) => {
 
     switch (type) {
         case ADD_TODO:

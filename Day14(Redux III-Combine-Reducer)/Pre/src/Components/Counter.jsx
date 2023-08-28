@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddCount } from "../Redux/Action";
+import { AddCount } from "../Redux/Counter/Counter_Action";
 
 export const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.CounterKey.counter);
 
   const handleCount = () => {
     dispatch(AddCount(1));
