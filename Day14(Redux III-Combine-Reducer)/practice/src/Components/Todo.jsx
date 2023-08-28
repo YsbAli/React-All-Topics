@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-// import { AddTodo } from "../Redux/Todo/Action";
-import { useState } from "react";
+import { AddTodo } from "../Redux/Todo/Action";
+import { useEffect, useState } from "react";
 
 export const Todo = () => {
   // const todos = useSelector((state) => state.todo);
@@ -14,7 +14,7 @@ export const Todo = () => {
   //after combiner reducer,,,,
   const todos = useSelector((state) => state.todos.todos);
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [text, setText] = useState("");
   // console.log(todos);
 
@@ -31,7 +31,7 @@ export const Todo = () => {
 
   const HandleTodo = () => {
     const payload = {
-      title: text,
+      type: text,
       status: false,
     };
 
@@ -43,10 +43,25 @@ export const Todo = () => {
         "content-type": "application/json",
       },
       method: "POST",
-    });
+    }).then(getData); // .then(getData) ---> this is for data adding in UI,,,after saving the data,,,calling the data again
   };
 
-  console.log("Rendering Todo Components");
+  //calling useEffect for fetching the data
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  //the data from network or db
+  const getData = () => {
+    fetch("http://localhost:8000/todos")
+      .then((x) => x.json())
+      .then((data) => {
+        dispatch(AddTodo(data));
+      });
+  };
+
+  // console.log("Rendering Todo Components");
 
   return (
     <div>

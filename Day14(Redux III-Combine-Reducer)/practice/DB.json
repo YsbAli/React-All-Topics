@@ -1,14 +1,19 @@
 {
   "todos": [
     {
-      "title": "Learn Node",
+      "type": "Learn Redux",
       "status": false,
       "id": 1
     },
     {
-      "title": "Have Tea",
+      "type": "Learn Node JS",
       "status": false,
       "id": 2
+    },
+    {
+      "type": "Learn API Building",
+      "status": false,
+      "id": 3
     }
   ]
 }
