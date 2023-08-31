@@ -1,0 +1,59 @@
+{
+  "todos": [
+    {
+      "type": "Learn MongoDB",
+      "status": false,
+      "id": 1
+    },
+    {
+      "type": "Learn Express JS",
+      "status": false,
+      "id": 2
+    },
+    {
+      "type": "Learn React",
+      "status": false,
+      "id": 3
+    },
+    {
+      "type": "Learn Node",
+      "status": false,
+      "id": 4
+    },
+    {
+      "type": "Have a Relax",
+      "status": false,
+      "id": 5
+    },
+    {
+      "type": "Have tea",
+      "status": false,
+      "id": 6
+    },
+    {
+      "type": "Have Rice Please",
+      "status": false,
+      "id": 7
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 8
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 9
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 10
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 11
+    }
+  ]
+}
