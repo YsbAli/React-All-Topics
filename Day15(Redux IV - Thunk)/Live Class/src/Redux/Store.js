@@ -36,19 +36,48 @@ const RootReducer = combineReducers({
 
 // the shorter way to write middleware in ES6 is 
 
-const middleWare = (store) => (next) => (action) => {
-    //your code here...
-    console.log("Action", action)  
-    //we have to call next here for go to next code or next line,,, and pass the action 
-    next(action)
+// const middleWare = (store) => (next) => (action) => {
+//     //your code here...
+//     console.log("Action", action)  
+//     //we have to call next here for go to next code or next line,,, and pass the action 
+//     next(action)
 
-    //the only thing  different from express middleware is,, express next() will automatically call the req, resp and all that things, we don't have to pass anything,,, ,
-    //  but in  redux middleware, we have to pass action
+//     //the only thing  different from express middleware is,, express next() will automatically call the req, resp and all that things, we don't have to pass anything,,, ,
+//     //  but in  redux middleware, we have to pass action
+// }
+
+
+const middleware1 = (store) => (next) => (action) => {
+
+    console.log("Entering MW1")
+    next(action)
+    console.log("Exiting MW1")
+}
+
+const middleWare2 = (store) => (next) => (action) => {
+    console.log("Entering MW2")
+    next(action)
+    console.log("Exiting MW2")
 }
 
 
+
+
+// // Output will be :  ---
+// Entering MW1
+// Extering MW2
+// Exiting MW2
+// Exiting MW1
+
+
+
 export const store = CreateStore(RootReducer,
-    applyMiddleware(middleWare)                   //it can accept any number of middleware
+    // applyMiddleware(middleWare)                   //it can accept any number of middleware
+
+    applyMiddleware(middleware1, middleWare2)
+
+
+
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
