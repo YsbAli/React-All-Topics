@@ -30,4 +30,4 @@
 
 # Day14 - Redux III (Combine Reducer)
 
-# Day15 - Redux IV - Redux Thunk
+# Day15 - Redux IV - Redux Middleware - Thunk

@@ -42,7 +42,7 @@ export const AddTodo = (data) => {
 
 
 export const getData = ()=> async (dispatch)=>{
-    //  ...calculation
+    //  ....calculation
     const data = await fetch("http://localhost:3000/todos").then((x)=> x.json())
     dispatch(AddTodo(data))
 }
