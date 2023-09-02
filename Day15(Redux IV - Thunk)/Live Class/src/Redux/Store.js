@@ -3,7 +3,6 @@ import { CounterReducer } from './Counter/Reducer'
 import { TodoReducer } from './Todo/Reducer'
 
 
-
 const RootReducer = combineReducers({
     counter: CounterReducer,
     todos: TodoReducer,
@@ -47,18 +46,18 @@ const RootReducer = combineReducers({
 // }
 
 
-const middleware1 = (store) => (next) => (action) => {
+// const middleware1 = (store) => (next) => (action) => {
 
-    console.log("Entering MW1")
-    next(action)
-    console.log("Exiting MW1")
-}
+//     console.log("Entering MW1")
+//     next(action)
+//     console.log("Exiting MW1")
+// }
 
-const middleWare2 = (store) => (next) => (action) => {
-    console.log("Entering MW2")
-    next(action)
-    console.log("Exiting MW2")
-}
+// const middleWare2 = (store) => (next) => (action) => {
+//     console.log("Entering MW2")
+//     next(action)
+//     console.log("Exiting MW2")
+// }
 
 
 
@@ -71,14 +70,44 @@ const middleWare2 = (store) => (next) => (action) => {
 
 
 
+
+
+
+// export const store = CreateStore(RootReducer,
+//     // applyMiddleware(middleWare)                   //it can accept any number of middleware
+
+//     applyMiddleware(middleware1, middleWare2)
+
+
+
+//     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )
+
+// console.log("State", store.getState())
+
+
+
+
+
+
+
+
+
+
+//calling action conditionally,,,,,
+
+const middleWare = (store) => (next) => (action) => {
+    if ( typeof action === "function") {
+      return action(store.dispatch)              //store.dispatch for getting the dispatch
+    }
+
+    next(action)
+}
+
+
+
+
 export const store = CreateStore(RootReducer,
-    // applyMiddleware(middleWare)                   //it can accept any number of middleware
-
-    applyMiddleware(middleware1, middleWare2)
-
-
-
+    applyMiddleware(middleWare)
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-
-console.log("State", store.getState())

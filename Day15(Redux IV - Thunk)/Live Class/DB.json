@@ -54,6 +54,31 @@
       "type": "",
       "status": false,
       "id": 11
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 12
+    },
+    {
+      "type": "Dada",
+      "status": false,
+      "id": 13
+    },
+    {
+      "type": "Dada Home",
+      "status": false,
+      "id": 14
+    },
+    {
+      "type": "",
+      "status": false,
+      "id": 15
+    },
+    {
+      "type": "xyz",
+      "status": false,
+      "id": 16
     }
   ]
 }

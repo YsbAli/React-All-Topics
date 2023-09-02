@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddTodo } from "../Redux/Todo/Action";
+import { AddTodo, getData } from "../Redux/Todo/Action";
 import { useEffect, useState } from "react";
 
 export const Todo = () => {
@@ -60,23 +60,33 @@ export const Todo = () => {
       method: "POST",
     })
       .then(() => setText(""))
-      .then(getData); //first .then is for ---> after adding the data setinput box empty
+      // .then(getData); //first .then is for ---> after adding the data setinput box empty
+      .then(() => {
+        dispatch(getData());
+      });
   };
 
   //calling useEffect for fetching the data
 
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  //we will give that async function action to dispatch
+
   useEffect(() => {
-    getData();
+    dispatch(getData()); //dispatch is recieving here a function that returns a async function
+    //so now action is a function, it's an async function,,but redux need action as an object , it will throw error,
   }, []);
 
-  //the data from network or db
-  const getData = () => {
-    fetch("http://localhost:3000/todos")
-      .then((x) => x.json())
-      .then((data) => {
-        dispatch(AddTodo(data));
-      });
-  };
+  // //the data from network or db
+  // const getData = () => {
+  //   fetch("http://localhost:3000/todos")
+  //     .then((x) => x.json())
+  //     .then((data) => {
+  //       dispatch(AddTodo(data));
+  //     });
+  // };
 
   // console.log("Rendering Todo Components");
 
