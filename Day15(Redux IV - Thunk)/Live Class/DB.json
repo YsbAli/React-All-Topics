@@ -24,6 +24,11 @@
       "type": "Become Full Stack MERN Developer",
       "status": false,
       "id": 5
+    },
+    {
+      "type": "Learned Thunk",
+      "status": false,
+      "id": 6
     }
   ]
 }
