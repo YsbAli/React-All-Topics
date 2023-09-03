@@ -1,5 +1,4 @@
 /**
- *
  * @param {string} key
  * returns JSON.parse(data)
  */
@@ -13,10 +12,13 @@ function loadData(key) {
     return undefined;
   }
 }
+
+
 /**
- *
+ 
  * @param {string} key
  * @param {any} data
+
  */
 function saveData(key, data) {
   localStorage.setItem(key, JSON.stringify(data));

@@ -1,6 +1,12 @@
+
+/* Starts Middleware before Thunk 
+
 import { legacy_createStore as CreateStore, applyMiddleware, combineReducers } from 'redux'
 import { CounterReducer } from './Counter/Reducer'
 import { TodoReducer } from './Todo/Reducer'
+
+
+
 
 
 const RootReducer = combineReducers({
@@ -109,5 +115,53 @@ const middleWare = (store) => (next) => (action) => {
 
 export const store = CreateStore(RootReducer,
     applyMiddleware(middleWare)
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+
+
+
+
+//  Ends Of MiddleWare
+
+*/
+
+
+
+
+
+
+
+// Starts Thunk Starts
+
+
+
+import { legacy_createStore as CreateStore, applyMiddleware, combineReducers } from 'redux'
+import { CounterReducer } from './Counter/Reducer'
+import { TodoReducer } from './Todo/Reducer'
+import thunk from 'redux-thunk'
+
+
+const RootReducer = combineReducers({
+    counter: CounterReducer,
+    todos: TodoReducer,
+    // auth : AuthReducer 
+})
+
+
+// const middleWare = (store) => (next) => (action) => {
+//     if ( typeof action === "function") {
+//       return action(store.dispatch)              //store.dispatch for getting the dispatch
+//     }
+
+//     next(action)
+// }
+
+
+
+
+export const store = CreateStore(RootReducer,
+    // applyMiddleware(middleWare)
+    applyMiddleware(thunk)
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

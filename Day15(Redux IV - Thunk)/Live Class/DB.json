@@ -14,6 +14,16 @@
       "type": "Learn React",
       "status": false,
       "id": 3
+    },
+    {
+      "type": "Learn Node",
+      "status": false,
+      "id": 4
+    },
+    {
+      "type": "Become Full Stack MERN Developer",
+      "status": false,
+      "id": 5
     }
   ]
 }
