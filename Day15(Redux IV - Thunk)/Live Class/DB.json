@@ -7,7 +7,7 @@
     },
     {
       "type": "Learn Express JS",
-      "status": false,
+      "status": true,
       "id": 2
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "type": "Learn Node",
-      "status": false,
+      "status": true,
       "id": 4
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "type": "Learned Thunk",
-      "status": false,
+      "status": true,
       "id": 6
     }
   ]

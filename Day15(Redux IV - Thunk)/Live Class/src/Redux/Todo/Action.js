@@ -1,3 +1,7 @@
+
+
+/* middleware and thunk Starts
+
 export const ADD_TODO = "ADD_TODO"
 
 export const AddTodo = (data) => {
@@ -49,3 +53,41 @@ export const getData = ()=> async (dispatch)=>{
 
 
 //passing dispatch here because, we have to, call the dispatch in function calling in the middleware
+
+
+//  middleware and thunk ends
+
+
+
+*/
+
+
+
+// Starts adding New Features on Todo App 
+
+
+export const ADD_TODO = "ADD_TODO"
+export const SORT = "SORT"           //for sort
+
+export const AddTodo = (data) => {
+    return {
+        type: ADD_TODO,
+        payload: data,
+    }
+}
+
+export const getData = () => async (dispatch) => {
+    //  ....calculation
+    const data = await fetch("http://localhost:3000/todos").then((x) => x.json())
+    dispatch(AddTodo(data))
+}
+
+
+//sort action creator
+export const sort = (by) => {
+    return {
+        type: SORT,
+        payload: by,
+    }
+
+}
