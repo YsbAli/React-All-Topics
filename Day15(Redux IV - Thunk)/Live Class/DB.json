@@ -49,6 +49,16 @@
       "type": "Sleep",
       "status": false,
       "id": 10
+    },
+    {
+      "type": "Clear",
+      "status": false,
+      "id": 11
+    },
+    {
+      "type": "Learnt HTML",
+      "status": false,
+      "id": 12
     }
   ]
 }

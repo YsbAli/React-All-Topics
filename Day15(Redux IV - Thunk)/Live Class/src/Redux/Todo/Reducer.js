@@ -27,7 +27,7 @@
 
 // Sort Features  : -- sort is in place, and sort function returns incorrectly
 
-import { ADD_TODO, FILTER, SORT } from "./Action"
+import { ADD_TODO, DELETE, FILTER, SORT } from "./Action"
 
 const initial_State = { todos: [] }
 
@@ -39,6 +39,8 @@ export const TodoReducer = (store = initial_State, { type, payload }) => {
             return { ...store, todos: [...store.todos].sort((a, b) => a[payload] > b[payload] ? 1 : a[payload] < b[payload] ? -1 : 0) }
         case FILTER:
             return { ...store, todos: store.todos.filter((e) => e.type.includes(payload)) }
+        case DELETE:
+            return {...store, todos: store.todos.filter((element)=> element.id !== payload)}    
         default:
             return store
     }

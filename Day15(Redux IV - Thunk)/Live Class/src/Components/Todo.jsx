@@ -1,5 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddTodo, filter, getData, sort } from "../Redux/Todo/Action";
+import {
+  AddTodo,
+  deleteTodo,
+  filterTodo,
+  getData,
+  sortTodo,
+} from "../Redux/Todo/Action";
 import { useEffect, useState } from "react";
 
 export const Todo = () => {
@@ -94,7 +100,7 @@ export const Todo = () => {
     <div>
       <input
         onChange={(e) =>
-          // dispatch(filter(e.target.value))
+          // dispatch(filterTodo(e.target.value))
           setFilter(e.target.value)
         }
         type="text"
@@ -102,7 +108,7 @@ export const Todo = () => {
       />
       <select
         onChange={(e) => {
-          dispatch(sort(e.target.value));
+          dispatch(sortTodo(e.target.value));
         }}
       >
         <option value="id">Sort by id</option>
@@ -130,9 +136,16 @@ export const Todo = () => {
         .filter((todo) => todo.type.includes(filter))
         .map((i) => (
           // <h4>Your todos are</h4>
-          <h2 key={i}>
+          <div key={i}>
             {i.id}. {i.type} --- {i.status ? "Done" : "Not Done"}
-          </h2>
+            <button
+              onClick={() => {
+                dispatch(deleteTodo(i.id));
+              }}
+            >
+              Delete
+            </button>
+          </div>
         ))}
     </div>
   );

@@ -69,6 +69,7 @@ export const getData = ()=> async (dispatch)=>{
 export const ADD_TODO = "ADD_TODO"
 export const SORT = "SORT"           //for sort
 export const FILTER = "FILTER"
+export const DELETE = "DELETE"
 
 export const AddTodo = (data) => {
     return {
@@ -85,7 +86,7 @@ export const getData = () => async (dispatch) => {
 
 
 //sort action creator
-export const sort = (by) => {
+export const sortTodo = (by) => {
     return {
         type: SORT,
         payload: by,
@@ -95,9 +96,19 @@ export const sort = (by) => {
 
 //filter action creator
 
-export const filter = (text) => {
+export const filterTodo = (text) => {
     return {
         type: FILTER,
         payload: text
+    }
+}
+
+
+//delete action creator
+
+export const deleteTodo = (id)=>{
+    return {
+        type: DELETE,
+        payload: id,
     }
 }
