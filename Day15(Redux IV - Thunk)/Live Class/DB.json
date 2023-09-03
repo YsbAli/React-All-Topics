@@ -29,6 +29,26 @@
       "type": "Learned Thunk",
       "status": true,
       "id": 6
+    },
+    {
+      "type": "This only testing",
+      "status": false,
+      "id": 7
+    },
+    {
+      "type": "A ",
+      "status": false,
+      "id": 8
+    },
+    {
+      "type": "B",
+      "status": false,
+      "id": 9
+    },
+    {
+      "type": "Sleep",
+      "status": false,
+      "id": 10
     }
   ]
 }

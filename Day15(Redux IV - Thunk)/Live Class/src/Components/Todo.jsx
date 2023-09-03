@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { AddTodo, getData, sort } from "../Redux/Todo/Action";
+import { AddTodo, filter, getData, sort } from "../Redux/Todo/Action";
 import { useEffect, useState } from "react";
 
 export const Todo = () => {
@@ -13,9 +13,9 @@ export const Todo = () => {
 
   //after combiner reducer,,,,
   const todos = useSelector((state) => state.todos.todos);
-
   const dispatch = useDispatch();
   const [text, setText] = useState("");
+  const [filter, setFilter] = useState("");
   // console.log(todos);
 
   // const HandleTodo = () => {
@@ -83,7 +83,7 @@ export const Todo = () => {
   // const getData = () => {
   //   fetch("http://localhost:3000/todos")
   //     .then((x) => x.json())
-  //     .then((data) => { 
+  //     .then((data) => {
   //       dispatch(AddTodo(data));
   //     });
   // };
@@ -92,6 +92,14 @@ export const Todo = () => {
 
   return (
     <div>
+      <input
+        onChange={(e) =>
+          // dispatch(filter(e.target.value))
+          setFilter(e.target.value)
+        }
+        type="text"
+        placeholder="Filter"
+      />
       <select
         onChange={(e) => {
           dispatch(sort(e.target.value));
@@ -99,6 +107,7 @@ export const Todo = () => {
       >
         <option value="id">Sort by id</option>
         <option value="status">Sort by status</option>
+        <option value="type">Sort by Titile</option>
       </select>
       <input
         value={text}
@@ -108,12 +117,23 @@ export const Todo = () => {
       />
       <button onClick={HandleTodo}>Add Todo</button>
       <h3>Your todo will apear here...</h3>
-      {todos.map((i) => (
+      {/* {todos.map((i) => (
         // <h4>Your todos are</h4>
         <h2 key={i}>
           {i.id}. {i.type} --- {i.status ? "Done" : "Not Done"}
         </h2>
-      ))}
+      ))} */}
+
+      {/* Filter  */}
+
+      {todos
+        .filter((todo) => todo.type.includes(filter))
+        .map((i) => (
+          // <h4>Your todos are</h4>
+          <h2 key={i}>
+            {i.id}. {i.type} --- {i.status ? "Done" : "Not Done"}
+          </h2>
+        ))}
     </div>
   );
 };

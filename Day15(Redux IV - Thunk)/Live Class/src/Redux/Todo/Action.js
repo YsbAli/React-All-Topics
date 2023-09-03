@@ -68,6 +68,7 @@ export const getData = ()=> async (dispatch)=>{
 
 export const ADD_TODO = "ADD_TODO"
 export const SORT = "SORT"           //for sort
+export const FILTER = "FILTER"
 
 export const AddTodo = (data) => {
     return {
@@ -77,7 +78,7 @@ export const AddTodo = (data) => {
 }
 
 export const getData = () => async (dispatch) => {
-    //  ....calculation
+    //  ....calculation, data call from db etc can do here,,,
     const data = await fetch("http://localhost:3000/todos").then((x) => x.json())
     dispatch(AddTodo(data))
 }
@@ -90,4 +91,13 @@ export const sort = (by) => {
         payload: by,
     }
 
+}
+
+//filter action creator
+
+export const filter = (text) => {
+    return {
+        type: FILTER,
+        payload: text
+    }
 }
