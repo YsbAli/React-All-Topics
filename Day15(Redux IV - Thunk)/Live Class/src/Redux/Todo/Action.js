@@ -70,6 +70,7 @@ export const ADD_TODO = "ADD_TODO"
 export const SORT = "SORT"           //for sort
 export const FILTER = "FILTER"
 export const DELETE = "DELETE"
+export const TOGGLE = "TOGGLE"
 
 export const AddTodo = (data) => {
     return {
@@ -106,9 +107,20 @@ export const filterTodo = (text) => {
 
 //delete action creator
 
-export const deleteTodo = (id)=>{
+export const deleteTodo = (id) => {
     return {
         type: DELETE,
         payload: id,
+    }
+}
+
+
+
+//toggle Action creator
+
+export const ToggleTodo = (id) => {
+    return {
+        type: TOGGLE,
+        payload: id
     }
 }

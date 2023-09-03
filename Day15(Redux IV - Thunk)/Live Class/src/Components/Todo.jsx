@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  AddTodo,
+  // AddTodo,
+  ToggleTodo,
   deleteTodo,
-  filterTodo,
+  // filterTodo,
   getData,
   sortTodo,
 } from "../Redux/Todo/Action";
@@ -138,6 +139,7 @@ export const Todo = () => {
           // <h4>Your todos are</h4>
           <div key={i}>
             {i.id}. {i.type} --- {i.status ? "Done" : "Not Done"}
+            <button onClick={() => dispatch(ToggleTodo(i.id))}>Toggle</button>
             <button
               onClick={() => {
                 dispatch(deleteTodo(i.id));
