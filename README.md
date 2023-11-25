@@ -26,7 +26,7 @@ Welcome to the "React All Topics Revision" repository! This collection serves as
 12. **Redux I - Redux-intro**
 13. **Redux II**
 14. **Redux III (Combine Reducer)**
-15. **R Redux IV - Redux Middleware - Thunk**
+15. **Redux IV - Redux Middleware - Thunk**
 
 ## Getting Started
 
